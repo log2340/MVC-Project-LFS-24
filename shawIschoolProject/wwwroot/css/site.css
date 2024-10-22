@@ -1,0 +1,167 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#fac {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.person {
+   background-color: ghostwhite;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 22%;
+   margin: 1em;
+   font-size: 70%;
+   border-radius: 5px;
+   border: solid black 1px;
+
+}
+
+.peopleSection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.person > img {
+    width: 10em;
+}
+
+.person > h2{
+    font-size: 2em;
+}
+
+.person > h3 {
+    font-size: 1.7em;
+}
+
+.person > h4 {
+    font-size: 1.3em;
+}
+
+.infoContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.info{
+    width: 40%;
+}
+
+.info > h3 {
+   color: #F36C04;
+   font-weight: bolder;
+}
+
+.statistic{
+    display: flex;
+    flex-direction: row;
+}
+
+.statistic > h1 {
+    color: #F36C04;
+    font-weight: bolder;
+    margin-right: 2em;
+}
+
+.smallList > h2 {
+    color: #F36C04;
+    font-weight: bolder;
+}
+
+.dialogLink:hover {
+    cursor: pointer;
+}
+
+.about > *{
+    margin-top: 3em;
+}
+
+.quote > h4 {
+    margin-left: 1em;
+    color: #F36C04;
+}
+
+
+#welcomePage {
+    width: 100%;
+    margin: 0px;
+}
+
+#trapezoid {
+    border-bottom: 30em solid #F36C04;
+    border-left: 10em solid transparent;
+    border-right: 0px solid transparent;
+    transform: rotate(180deg);
+    height: 0;
+    width: 50em;
+    position: absolute;
+    left: 0px;
+    top: 2em;
+    z-index: -99;
+}
+
+.whiteText > h1 {
+    color: white;
+    font-weight: bolder;
+    margin-top: 5%;
+}
+
+.whiteText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#welcomeH1 {
+    font-size: 600%;
+}
+
+#homeSideText {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#homeSideText > * {
+    margin-top: 10%;
+
+}
+    .welcomeText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.employmentContent > * {
+    margin-top: 5%;
+
+}

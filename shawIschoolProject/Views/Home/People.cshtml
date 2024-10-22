@@ -1,0 +1,60 @@
+﻿@model shawIschoolProject.Models.PeopleModel;
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+
+<h1>@Model.title</h1>
+<div>@Model.subTitle</div>
+<div id="hideMe" style="display:none">
+    <div id="pepTabs">
+        <ul>
+            <li><a href="#fac">Our Faculty</a></li>
+        <li><a href="#staff" >Our Staff</a></li>
+        </ul>
+        <div id="fac">
+            <div class="peopleSection">
+                @foreach (var faculty in Model.faculty)
+                {
+                    <div class="person">
+                        <img src="@faculty.imagePath" alt="One of our awesome members!" />
+                        <h2>@faculty.name</h2>
+                        <h3>@faculty.title</h3>
+                        <h4>@faculty.office</h4>
+                        <h4>@faculty.phone</h4>
+                        <h4>@faculty.email</h4>
+
+                        @if (faculty.website != "")
+                        {
+                            <h3>
+                                <a href="@faculty.website" target="_blank">My Site</a>
+                            </h3>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+        <div id="staff">
+            <div class="peopleSection">
+                @foreach (var staff in Model.staff)
+                {
+                    <div class="person">
+                        <img src="@staff.imagePath" alt="One of our awesome members!" />
+                        <h2>@staff.name</h2>
+                        <h3>@staff.title</h3>
+                        <h4>@staff.office</h4>
+                        <h4>@staff.phone</h4>
+                        <h4>@staff.email</h4>
+
+                        @if (staff.website != "")
+                        {
+                            <h3>
+                                <a href="@staff.website" target="_blank">My Site</a>
+                            </h3>
+                        }
+                    </div>
+                }
+            </div>
+
+
+    </div>
+</div>

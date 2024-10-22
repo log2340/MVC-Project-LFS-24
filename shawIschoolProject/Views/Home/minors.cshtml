@@ -1,0 +1,39 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+
+<div id="courseInfoContainer">
+
+</div>
+<h1>@Model.Minors.pageTitle</h1>
+<div id="hideMe" style="display:none">
+    <section class="about">
+        @foreach (var minors in Model.Minors.UgMinors)
+        {
+            <div class="minor">
+                <h3>@minors.name</h3>
+                <h4>@minors.title</h4>
+                <h5>@minors.description</h5>
+                <!--div to contain accordion for courses-->
+                <div class="minorAcc">
+                    <h4>Courses</h4>
+                    <div>
+                        <!--lists out courses per minor-->
+                      @foreach (var courses in minors.courses)
+                        {
+
+                            <div class="dialogLink">
+                                <h4 class="courseName" onclick="getAjax('@courses')">@courses</h4>
+                            </div>
+                       
+                        }
+                    </div>
+                </div>
+                <p>@minors.note</p>
+            </div>
+        }
+    </section>
+
+</div>

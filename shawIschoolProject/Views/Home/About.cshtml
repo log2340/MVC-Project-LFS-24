@@ -1,0 +1,15 @@
+﻿@model shawIschoolProject.Models.AboutModel;
+
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+<h1>@ViewData["Title"]</h1>
+
+<section class="about">
+    <h4>@Model.description</h4>
+    <div class="quote">
+        <h5>@Model.quote</h5>
+        <h4>-- @Model.quoteAuthor</h4>
+    </div>
+
+</section>

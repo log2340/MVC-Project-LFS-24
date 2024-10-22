@@ -1,0 +1,76 @@
+﻿@model shawIschoolProject.Models.DegreesModel;
+@{
+    ViewData["Title"] = @Model.pageTitle;
+}
+
+<h1>@Model.pageTitle</h1>
+<!--tabs for degrees, separated into graduate and undergraduate-->
+<div id="hideMe" style="display:none">
+    <div id="degreeTabs">
+        <ul>
+            <li><a href="#undergrad">Undergraduate Degrees</a></li>
+            <li><a href="#grad">Graduate Degrees</a></li>
+        </ul>
+        <!--undergraduate degrees div for tab-->
+        <div id="undergrad">
+            @foreach (var underDegree in Model.undergraduate)
+            {
+                <div class="degree">
+                    <h2>@underDegree.title (@underDegree.degreeName)</h2>
+                    <h4>@underDegree.description</h4>
+                    <!--accordion for concentrations-->
+                    <div class="concAcc">
+                        <h5>Concentrations</h5>
+                        <div>
+                            @foreach (var concentration in underDegree.concentrations)
+                            {
+                                <h5>@concentration</h5>    
+                            }
+
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+            }
+        </div>
+        <!--graduate degrees div for tab-->
+        <div id="grad">
+            @foreach (var gradDegree in Model.graduate)
+            {
+                <div class="degree">
+                    <h2>@gradDegree.title (@gradDegree.degreeName)</h2>
+                    <h4>@gradDegree.description</h4>
+                    <!--accordion for concentrations-->
+                    <div class="concAcc">
+                        <!--fills accordion with concentrations if the graduate defree item has any-->
+                        @if(gradDegree.concentrations != null){
+                            <h5>Concentrations</h5>
+                            <div>
+                                @foreach (var concentration in gradDegree.concentrations)
+                                {
+                                    <h5>@concentration</h5>                                }
+
+                            </div>
+                        }
+                        <!--fills accordion with certificates if the graduate degree item has any-->
+                        @if (gradDegree.availableCertificates != null)
+                        {
+                            <h5>Available Certificates</h5>
+                            <div>
+                                @foreach (var certificate in gradDegree.availableCertificates)
+                                {
+                                    <h5>@certificate</h5>
+                                }
+
+                            </div>
+                        }
+                    </div>
+                    <hr />
+                </div>
+            }
+        </div>
+
+
+
+    </div>
+</div>
